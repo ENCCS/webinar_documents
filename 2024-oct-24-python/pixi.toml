@@ -12,27 +12,33 @@ sync-pip = "uv pip compile --index-strategy unsafe-best-match --emit-index-url r
 sync = { depends-on = ["sync-conda", "sync-pip"] }
 
 [dependencies]
+python = "3.10.*"
+matplotlib-base = ">=3.9,<4"
+
 numba = ">=0.60.0,<0.61"
-python = "3.12.*"
 # cuda = {version="11.*", channel="nvidia"}
 
-# pynvjitlink = {channel="rapidsai"}
-# libnvjitlink = {channel="rapidsai"}
-# cuda-nvcc = "*"
-# cuda-nvrtc = "*"
+# # CUDA 12
 # cuda-version = ">=12.0"
+# cuda-nvcc = "*"
+# cuda-nvrtc  "*"
+# # For CUDA Minor Version Compatibility with CUDA 12
+# pynvjitlink = {channel="rapidsai"}
 
+## CUDA 11
+cuda-version = ">=11.2,<12.0"
 cudatoolkit = "*"
+## For CUDA Minor Version Compatibility with CUDA 11
 cubinlinker = {channel="rapidsai"}
 ptxcompiler = "*"
-cuda-version = ">=11.2,<12.0"
+cudf = { version = "23.*", channel = "rapidsai" }
+rmm = { version = "23.*", channel = "rapidsai" }
+librmm = { version = "23.*", channel = "rapidsai" }
+cupy = ">=11.6.0,<12"
+pycuda = ">=2024.1,<2025"
 
-# cudf = { channel="rapidsai"}
-# matplotlib-base = ">=3.9.2,<4"
 # cupy = ">=13.3.0,<14"
 # pycuda = ">=2024.1,<2025"
-# polars = "1.8.*"
-# pylibcudf = "24.10.*"
 
 [pypi-options]
 extra-index-urls = ["https://pypi.nvidia.com"]
