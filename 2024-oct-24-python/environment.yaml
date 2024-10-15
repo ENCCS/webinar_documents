@@ -20,4 +20,7 @@ dependencies:
   - --extra-index-url https://pypi.nvidia.com/
   - polars[gpu]>=1.8.2, <2
   - jupyterlab>=4.2.5, <5
-
+  - jupyterlab-myst>=2.4.2, <3
+  - jupyterlab-git>=0.50.1, <0.51
+  - jupyterlab-lsp>=5.1.0, <6
+  - python-lsp-server[all]>=1.12.0, <2

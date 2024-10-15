@@ -1,1 +1,5 @@
 jupyterlab
+jupyterlab-myst
+jupyterlab-git
+jupyterlab-lsp
+python-lsp-server[all]
