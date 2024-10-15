@@ -22,11 +22,20 @@ After attending this seminar, you will be able to:
 
 ## Installation
 
-List of package can be installed using [pixi], [conda] or [pip]
+List of packages can be installed using [pixi], [conda] or [pip]
 
 [pixi]: https://pixi.sh
 [conda]: https://conda-forge.org/download/
 [pip]: https://pip.pypa.io/en/stable/installation/
+
+> [!NOTE]
+> The following steps would supply the application packages and their libraries
+> and with pixi / conda even the CUDA Toolkit / SDK (for eg. the `nvcc` compiler).
+> However CUDA drivers must be installed at the system level, subject to
+> [compatibility](https://docs.nvidia.com/deploy/cuda-compatibility/index.html).
+> The packages may already be supplied by your distribution's package manager,
+> but if not you can try Nvidia's [installation instructions](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html)
+> (proceed with caution).
 
 ### [pixi]
 

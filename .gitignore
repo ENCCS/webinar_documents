@@ -4,3 +4,4 @@
 *.egg-info
 .ipynb_checkpoints
 .virtual_documents
+__pycache__
