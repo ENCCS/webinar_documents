@@ -13,6 +13,8 @@ sync = { depends-on = ["sync-conda", "sync-pip"] }
 
 [dependencies]
 numba = ">=0.60.0,<0.61"
+pynvjitlink = {channel="rapidsai"}
+libnvjitlink = {channel="rapidsai"}
 python = "3.12.*"
 cuda-nvcc = ">=12,<13"
 cuda-nvrtc = ">=12,<13"
@@ -22,12 +24,15 @@ matplotlib-base = ">=3.9.2,<4"
 cuda-python = ">=12.6.0,<13"
 cupy = ">=13.3.0,<14"
 pycuda = ">=2024.1,<2025"
+polars = "1.8.*"
+pylibcudf = "24.10.*"
 
 [pypi-options]
 extra-index-urls = ["https://pypi.nvidia.com"]
 
 [pypi-dependencies]
-polars = { version = ">=1.8.2, <2", extras = ["gpu"] }
+# polars = { version = ">=1.8.2, <2", extras = ["gpu"] }
+cudf-polars-cu12 = ">=24"
 jupyterlab = ">=4.2.5, <5"
 jupyterlab-myst = ">=2.4.2, <3"
 jupyterlab-git = ">=0.50.1, <0.51"
