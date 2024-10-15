@@ -1,0 +1,23 @@
+name: gpu-python-webinar
+channels:
+- conda-forge
+- rapidsai
+- nvidia
+- nodefaults
+dependencies:
+- numba >=0.60.0,<0.61
+- python 3.12.*
+- cuda-nvcc >=12,<13
+- cuda-nvrtc >=12,<13
+- cuda-version 12.*
+- rapidsai::cudf 24.10.*
+- matplotlib-base >=3.9.2,<4
+- cuda-python >=12.6.0,<13
+- cupy >=13.3.0,<14
+- pycuda >=2024.1,<2025
+- pip
+- pip:
+  - --extra-index-url https://pypi.nvidia.com/
+  - polars[gpu]>=1.8.2, <2
+  - jupyterlab>=4.2.5, <5
+
