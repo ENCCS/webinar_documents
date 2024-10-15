@@ -7,5 +7,5 @@ llvmlite>=0.43
 # https://numba.readthedocs.io/en/stable/cuda/overview.html#cuda-bindings
 cuda-python
 # https://docs.cupy.dev/en/stable/install.html
-cupy-cuda12x
+cupy-cuda11x
 pycuda
