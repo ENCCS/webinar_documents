@@ -36,9 +36,7 @@ rmm = { version = "23.*", channel = "rapidsai" }
 librmm = { version = "23.*", channel = "rapidsai" }
 cupy = ">=11.6.0,<12"
 pycuda = ">=2024.1,<2025"
-
-# cupy = ">=13.3.0,<14"
-# pycuda = ">=2024.1,<2025"
+cuda-nvcc = { version = ">=12.4.131,<13", channel = "nvidia" }
 
 [pypi-options]
 extra-index-urls = ["https://pypi.nvidia.com"]
