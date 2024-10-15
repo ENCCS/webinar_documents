@@ -3,3 +3,4 @@
 .pixi
 *.egg-info
 .ipynb_checkpoints
+.virtual_documents
