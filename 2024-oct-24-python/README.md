@@ -22,7 +22,9 @@ After attending this seminar, you will be able to:
 
 ## Installation
 
-List of packages can be installed using [pixi], [conda] or [pip]
+List of packages can be installed using [pixi], [conda] or [pip]. The installation has been tested along
+with CUDA 11.5.1 driver in a Ubuntu 22.04 LTS distribution, which in turn was installed
+using a `sudo apt install nvidia-cuda-dev` command.
 
 [pixi]: https://pixi.sh
 [conda]: https://conda-forge.org/download/
