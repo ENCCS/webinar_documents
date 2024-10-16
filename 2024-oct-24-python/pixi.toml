@@ -41,14 +41,14 @@ pycuda = ">=2024.1,<2025"
 cuda-nvcc = { version = ">=11,<12", channel = "nvidia" }
 
 jax = "0.4.*"
-jaxlib = { version = ">=0.4.23,<0.4.25", build = "cuda118*" }
+jaxlib = { version = ">=0.4.23,<0.4.25", build = "cuda*" }
 
-[system-requirements]
-linux = "5.10"
-libc = { family="glibc", version="2.17" }
-# For jax
-# https://github.com/prefix-dev/pixi/issues/1288
-cuda = "11.8"
+# [system-requirements]
+# linux = "5.10"
+# libc = { family="glibc", version="2.17" }
+# # For jax
+# # https://github.com/prefix-dev/pixi/issues/1288
+# cuda = "11.8"
 
 [pypi-options]
 extra-index-urls = [
