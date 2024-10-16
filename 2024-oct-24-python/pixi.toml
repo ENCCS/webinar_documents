@@ -8,7 +8,11 @@ version = "0.1.0"
 
 [tasks]
 sync-conda = "pixi project export conda-environment environment.yaml"
-sync-pip = "uv pip compile --index-strategy unsafe-best-match --emit-index-url requirements.in requirements-jupyter.in requirements-nvidia.in -o requirements.txt"
+sync-pip = """\
+  uv pip compile --index-strategy unsafe-best-match --emit-index-url --emit-find-links \
+    -o requirements.txt \
+    requirements.in requirements-jax.in requirements-jupyter.in requirements-nvidia.in
+"""
 sync = { depends-on = ["sync-conda", "sync-pip"] }
 
 [dependencies]

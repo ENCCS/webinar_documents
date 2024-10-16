@@ -22,7 +22,12 @@ dependencies:
 - nvidia::cuda-nvcc >=11,<12
 - pip
 - pip:
+  - --index-url https://pypi.org/simple
   - --extra-index-url https://pypi.nvidia.com/
+  - --find-links https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+  - --find-links https://storage.googleapis.com/jax-releases/jax_releases.html
+  - jax[cuda11-local]==0.4.24
+  - jaxlib
   - jupyterlab>=4.2.5, <5
   - jupyterlab-myst>=2.4.2, <3
   - jupyterlab-git>=0.50.1, <0.51

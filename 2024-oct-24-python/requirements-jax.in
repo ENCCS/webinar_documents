@@ -1,0 +1,4 @@
+-f https://storage.googleapis.com/jax-releases/jax_releases.html
+-f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+jax[cuda11-local]==0.4.24
+jaxlib
