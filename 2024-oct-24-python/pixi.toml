@@ -37,10 +37,15 @@ cudatoolkit = "*"
 ## For CUDA Minor Version Compatibility with CUDA 11
 cubinlinker = {channel="rapidsai"}
 ptxcompiler = "*"
+
+## RAPIDS
 cudf = { version = "23.*", channel = "rapidsai" }
 rmm = { version = "23.*", channel = "rapidsai" }
 librmm = { version = "23.*", channel = "rapidsai" }
+
 cupy = ">=11.6.0,<12"
+
+## pycuda
 pycuda = ">=2024.1,<2025"
 cuda-nvcc = { version = ">=11,<12", channel = "nvidia" }
 
