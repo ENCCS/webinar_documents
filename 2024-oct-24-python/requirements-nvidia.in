@@ -1,0 +1,13 @@
+--extra-index-url=https://pypi.nvidia.com
+# https://numba.readthedocs.io/en/stable/cuda/minor_version_compatibility.html#minor-version-compatibility
+ pynvjitlink-cu12
+ptxcompiler-cu11
+cubinlinker-cu11
+# https://rapids.ai/#quick-start
+cudf-cu11==24.10.*
+dask-cudf-cu11==24.10.*
+cuml-cu11==24.10.*
+cugraph-cu11==24.10.*
+# https://rapids.ai/polars-gpu-engine/#get-started
+# Requires CUDA 12
+# polars[gpu]
