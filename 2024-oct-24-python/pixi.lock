@@ -8,7 +8,9 @@ environments:
     indexes:
     - https://pypi.org/simple
     - https://pypi.nvidia.com/
-    - https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+    find-links:
+    - url: https://storage.googleapis.com/jax-releases/jax_releases.html
+    - url: https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
     packages:
       linux-64:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/_libgcc_mutex-0.1-conda_forge.tar.bz2
@@ -44,7 +46,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/cupy-11.6.0-py310h9216885_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/cycler-0.12.1-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/dlpack-0.5-h9c3ff4c_0.tar.bz2
-      - conda: https://conda.anaconda.org/conda-forge/linux-64/fastavro-1.9.7-py310ha75aee5_1.conda
+      - conda: https://conda.anaconda.org/conda-forge/linux-64/fastavro-1.9.7-py310ha75aee5_2.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/fastrlock-0.8.2-py310hc6cd4ac_2.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/fonttools-4.54.1-py310ha75aee5_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/freetype-2.12.1-h267a509_2.conda
@@ -121,7 +123,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/orc-1.9.0-h2f23424_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/packaging-24.1-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/pandas-1.5.3-py310h9b08913_1.conda
-      - conda: https://conda.anaconda.org/conda-forge/linux-64/pillow-10.4.0-py310he228d35_1.conda
+      - conda: https://conda.anaconda.org/conda-forge/linux-64/pillow-11.0.0-py310hfeaa1f3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/platformdirs-4.3.6-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/protobuf-4.21.12-py310heca2aa9_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/pthread-stubs-0.4-hb9d3cd8_1002.conda
@@ -129,7 +131,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/pyarrow-10.0.1-py310he6bfd7f_37_cpu.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/pycuda-2024.1-py310h6007a64_3.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/pyparsing-3.2.0-pyhd8ed1ab_1.conda
-      - conda: https://conda.anaconda.org/conda-forge/linux-64/python-3.10.15-h4a871b0_1_cpython.conda
+      - conda: https://conda.anaconda.org/conda-forge/linux-64/python-3.10.15-h4a871b0_2_cpython.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/python-dateutil-2.9.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/python_abi-3.10-5_cp310.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/pytools-2024.1.14-pyhd8ed1ab_0.conda
@@ -194,6 +196,8 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/f4/3a/5d8680279ada9571de8469220069d27024ee47624af534e537c9ff49a450/ipython-8.28.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/7b/55/e5326141505c5d5e34c5e0935d2908a74e4561eca44108fbfb9c13d2911a/isoduration-20.11.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d1/b3/8def84f539e7d2289a02f0524b944b15d7c75dab7628bedf1c4f0992029c/isort-5.13.2-py3-none-any.whl
+      - pypi: https://storage.googleapis.com/jax-releases/jax/jax-0.4.24-py3-none-any.whl
+      - pypi: https://storage.googleapis.com/jax-releases/cuda11/jaxlib-0.4.24+cuda11.cudnn86-cp310-cp310-manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/20/9f/bc63f0f0737ad7a60800bfd472a4836661adae21f9c2535f3957b1e54ceb/jedi-0.19.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/31/80/3a54838c3fb461f6fec263ebf3a3a41771bd05190238de3486aae8540c36/jinja2-3.1.4-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/8a/3c/4f8791ee53ab9eeb0b022205aa79387119a74cc9429582ce04098e6fc540/json5-0.9.25-py3-none-any.whl
@@ -216,12 +220,14 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/8f/8e/9ad090d3553c280a8060fbf6e24dc1c0c29704ee7d1c372f0c174aa59285/matplotlib_inline-0.1.7-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/27/1a/1f68f9ba0c207934b35b86a8ca3aad8395a3d6dd7921c0686e23853ff5a9/mccabe-0.7.0-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/f0/74/c95adcdf032956d9ef6c89a9b8a5152bf73915f8c633f3e3d88d06bd699c/mistune-3.0.2-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/9a/5b/d47361f882ff2ae27d764f314d18706c69859da60a6c78e6c9e81714c792/ml_dtypes-0.5.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/66/e8/00517a23d3eeaed0513e718fbc94aab26eaa1758f5690fc8578839791c79/nbclient-0.10.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/b8/bb/bb5b6a515d1584aa2fd89965b11db6632e4bdc69495a52374bcc36e56cfa/nbconvert-7.16.4-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/73/23/824b295f4cc53f4437f6917e8f46c519cd3a9be909dd36ca0682fdc7fff1/nbdime-4.0.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a9/82/0340caa499416c78e5d8f5f05947ae4bc3cba53c9f038ab6e9ed964e22f1/nbformat-5.10.4-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a0/c4/c2971a3ba4c6103a3d10c4b0f24f461ddc027f0f09763220cf35ca1401b3/nest_asyncio-1.6.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/f9/33/bd5b9137445ea4b680023eb0469b2bb969d61303dedb2aac6560ff3d14a1/notebook_shim-0.2.4-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/23/cd/066e86230ae37ed0be70aae89aabf03ca8d9f39c8aea0dec8029455b5540/opt_einsum-3.4.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/2c/ab/fc8290c6a4c722e5514d80f62b2dc4c4df1a68a41d1364e625c35990fcf3/overrides-7.7.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/ef/af/4fbc8cab944db5d21b7e2a5b8e9211a03a79852b1157e2c102fcc61ac440/pandocfilters-1.5.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/c6/ac/dac4a63f978e4dcb3c6d3a78c4d8e0192a113d288502a1216950c41b1027/parso-0.8.4-py2.py3-none-any.whl
@@ -251,6 +257,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/9e/51/17023c0f8f1869d8806b979a2bffa3f861f26a3f1a66b094288323fba52f/rfc3986_validator-0.1.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a0/d0/e213e5adfa162e437dff3669131dc476043fc3a22fe99ef891516100610d/rope-1.13.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/4a/6d/1166a157b227f2333f8e8ae320b6b7ea2a6a38fbe7a3563ad76dffc8608d/rpds_py-0.20.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+      - pypi: https://files.pythonhosted.org/packages/47/78/b0c2c23880dd1e99e938ad49ccfb011ae353758a2dc5ed7ee59baff684c3/scipy-1.14.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/40/b0/4562db6223154aa4e22f939003cb92514c79f3d4dccca3444253fd17f902/Send2Trash-1.8.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a7/a5/10f97f73544edcdef54409f1d839f6049a0d79df68adbc1ceb24d1aaca42/smmap-5.0.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e9/44/75a9c9421471a6c4805dbf2356f7c181a29c1879239abab1ea2cc8f38b40/sniffio-1.3.1-py3-none-any.whl
@@ -1191,12 +1198,12 @@ packages:
 - kind: conda
   name: fastavro
   version: 1.9.7
-  build: py310ha75aee5_1
-  build_number: 1
+  build: py310ha75aee5_2
+  build_number: 2
   subdir: linux-64
-  url: https://conda.anaconda.org/conda-forge/linux-64/fastavro-1.9.7-py310ha75aee5_1.conda
-  sha256: 0bab34d55998b460f7fe51958ecfaa648ee2dbee84199dfa55a901e5eeca6f98
-  md5: 056c8ede6b1cd70cf7b530df5c349a3f
+  url: https://conda.anaconda.org/conda-forge/linux-64/fastavro-1.9.7-py310ha75aee5_2.conda
+  sha256: 2ae6d308c5d59fd98274433956aaa23225b820d37cae430392d31422c49e034c
+  md5: 39c38a0175b057ade8e43c3a9c91bcc5
   depends:
   - __glibc >=2.17,<3.0.a0
   - libgcc >=13
@@ -1205,8 +1212,8 @@ packages:
   license: MIT
   purls:
   - pkg:pypi/fastavro?source=hash-mapping
-  size: 513226
-  timestamp: 1728993382896
+  size: 512665
+  timestamp: 1729067919124
 - kind: pypi
   name: fastjsonschema
   version: 2.20.0
@@ -1589,6 +1596,90 @@ packages:
   requires_dist:
   - colorama>=0.4.6 ; extra == 'colors'
   requires_python: '>=3.8.0'
+- kind: pypi
+  name: jax
+  version: 0.4.24
+  url: https://storage.googleapis.com/jax-releases/jax/jax-0.4.24-py3-none-any.whl
+  requires_dist:
+  - ml-dtypes>=0.2.0
+  - numpy>=1.22
+  - opt-einsum
+  - scipy>=1.9
+  - importlib-metadata>=4.6 ; python_full_version < '3.10'
+  - numpy>=1.23.2 ; python_full_version >= '3.11'
+  - numpy>=1.26.0 ; python_full_version >= '3.12'
+  - scipy>=1.11.1 ; python_full_version >= '3.12'
+  - protobuf<4,>=3.13 ; extra == 'australis'
+  - jaxlib==0.4.23 ; extra == 'ci'
+  - jaxlib==0.4.24 ; extra == 'cpu'
+  - jaxlib==0.4.24+cuda11.cudnn86 ; extra == 'cuda'
+  - jaxlib==0.4.24+cuda11.cudnn86 ; extra == 'cuda11-cudnn86'
+  - jaxlib==0.4.24+cuda11.cudnn86 ; extra == 'cuda11-local'
+  - jaxlib==0.4.24+cuda11.cudnn86 ; extra == 'cuda11-pip'
+  - nvidia-cublas-cu11>=11.11 ; extra == 'cuda11-pip'
+  - nvidia-cuda-cupti-cu11>=11.8 ; extra == 'cuda11-pip'
+  - nvidia-cuda-nvcc-cu11>=11.8 ; extra == 'cuda11-pip'
+  - nvidia-cuda-runtime-cu11>=11.8 ; extra == 'cuda11-pip'
+  - nvidia-cudnn-cu11>=8.8 ; extra == 'cuda11-pip'
+  - nvidia-cufft-cu11>=10.9 ; extra == 'cuda11-pip'
+  - nvidia-cusolver-cu11>=11.4 ; extra == 'cuda11-pip'
+  - nvidia-cusparse-cu11>=11.7 ; extra == 'cuda11-pip'
+  - nvidia-nccl-cu11>=2.18.3 ; extra == 'cuda11-pip'
+  - jaxlib==0.4.24 ; extra == 'cuda12'
+  - jax-cuda12-plugin==0.4.24 ; extra == 'cuda12'
+  - nvidia-cublas-cu12>=12.2.5.6 ; extra == 'cuda12'
+  - nvidia-cuda-cupti-cu12>=12.2.142 ; extra == 'cuda12'
+  - nvidia-cuda-nvcc-cu12>=12.2.140 ; extra == 'cuda12'
+  - nvidia-cuda-runtime-cu12>=12.2.140 ; extra == 'cuda12'
+  - nvidia-cudnn-cu12>=8.9 ; extra == 'cuda12'
+  - nvidia-cufft-cu12>=11.0.8.103 ; extra == 'cuda12'
+  - nvidia-cusolver-cu12>=11.5.2 ; extra == 'cuda12'
+  - nvidia-cusparse-cu12>=12.1.2.141 ; extra == 'cuda12'
+  - nvidia-nccl-cu12>=2.19.3 ; extra == 'cuda12'
+  - nvidia-nvjitlink-cu12>=12.2 ; extra == 'cuda12'
+  - jaxlib==0.4.24+cuda12.cudnn89 ; extra == 'cuda12-local'
+  - jaxlib==0.4.24+cuda12.cudnn89 ; extra == 'cuda12-pip'
+  - nvidia-cublas-cu12>=12.2.5.6 ; extra == 'cuda12-pip'
+  - nvidia-cuda-cupti-cu12>=12.2.142 ; extra == 'cuda12-pip'
+  - nvidia-cuda-nvcc-cu12>=12.2.140 ; extra == 'cuda12-pip'
+  - nvidia-cuda-runtime-cu12>=12.2.140 ; extra == 'cuda12-pip'
+  - nvidia-cudnn-cu12>=8.9 ; extra == 'cuda12-pip'
+  - nvidia-cufft-cu12>=11.0.8.103 ; extra == 'cuda12-pip'
+  - nvidia-cusolver-cu12>=11.5.2 ; extra == 'cuda12-pip'
+  - nvidia-cusparse-cu12>=12.1.2.141 ; extra == 'cuda12-pip'
+  - nvidia-nccl-cu12>=2.19.3 ; extra == 'cuda12-pip'
+  - nvidia-nvjitlink-cu12>=12.2 ; extra == 'cuda12-pip'
+  - jaxlib==0.4.19 ; extra == 'minimum-jaxlib'
+  - jaxlib==0.4.24 ; extra == 'tpu'
+  - libtpu-nightly==0.1.dev20240205 ; extra == 'tpu'
+  - requests ; extra == 'tpu'
+  requires_python: '>=3.9'
+- kind: pypi
+  name: jaxlib
+  version: 0.4.24+cuda11.cudnn86
+  url: https://storage.googleapis.com/jax-releases/cuda11/jaxlib-0.4.24+cuda11.cudnn86-cp310-cp310-manylinux2014_x86_64.whl
+  requires_dist:
+  - scipy>=1.9
+  - numpy>=1.22
+  - ml-dtypes>=0.2.0
+  - scipy>=1.11.1 ; python_full_version >= '3.12'
+  - nvidia-cublas-cu11>=11.11 ; extra == 'cuda11-pip'
+  - nvidia-cuda-cupti-cu11>=11.8 ; extra == 'cuda11-pip'
+  - nvidia-cuda-nvcc-cu11>=11.8 ; extra == 'cuda11-pip'
+  - nvidia-cuda-runtime-cu11>=11.8 ; extra == 'cuda11-pip'
+  - nvidia-cudnn-cu11>=8.8 ; extra == 'cuda11-pip'
+  - nvidia-cufft-cu11>=10.9 ; extra == 'cuda11-pip'
+  - nvidia-cusolver-cu11>=11.4 ; extra == 'cuda11-pip'
+  - nvidia-cusparse-cu11>=11.7 ; extra == 'cuda11-pip'
+  - nvidia-cublas-cu12 ; extra == 'cuda12-pip'
+  - nvidia-cuda-cupti-cu12 ; extra == 'cuda12-pip'
+  - nvidia-cuda-nvcc-cu12 ; extra == 'cuda12-pip'
+  - nvidia-cuda-runtime-cu12 ; extra == 'cuda12-pip'
+  - nvidia-cudnn-cu12>=8.9 ; extra == 'cuda12-pip'
+  - nvidia-cufft-cu12 ; extra == 'cuda12-pip'
+  - nvidia-cusolver-cu12 ; extra == 'cuda12-pip'
+  - nvidia-cusparse-cu12 ; extra == 'cuda12-pip'
+  requires_python: '>=3.9'
 - kind: pypi
   name: jedi
   version: 0.19.1
@@ -3125,6 +3216,23 @@ packages:
   url: https://files.pythonhosted.org/packages/f0/74/c95adcdf032956d9ef6c89a9b8a5152bf73915f8c633f3e3d88d06bd699c/mistune-3.0.2-py3-none-any.whl
   sha256: 71481854c30fdbc938963d3605b72501f5c10a9320ecd412c121c163a1c7d205
   requires_python: '>=3.7'
+- kind: pypi
+  name: ml-dtypes
+  version: 0.5.0
+  url: https://files.pythonhosted.org/packages/9a/5b/d47361f882ff2ae27d764f314d18706c69859da60a6c78e6c9e81714c792/ml_dtypes-0.5.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+  sha256: c7a9152f5876fef565516aa5dd1dccd6fc298a5891b2467973905103eb5c7856
+  requires_dist:
+  - numpy>=1.21
+  - numpy>=1.21.2 ; python_full_version >= '3.10'
+  - numpy>=1.23.3 ; python_full_version >= '3.11'
+  - numpy>=1.26.0 ; python_full_version >= '3.12'
+  - numpy>=2.1.0 ; python_full_version >= '3.13'
+  - absl-py ; extra == 'dev'
+  - pytest ; extra == 'dev'
+  - pytest-xdist ; extra == 'dev'
+  - pylint>=2.6.0 ; extra == 'dev'
+  - pyink ; extra == 'dev'
+  requires_python: '>=3.9'
 - kind: conda
   name: munkres
   version: 1.1.4
@@ -3416,6 +3524,12 @@ packages:
   purls: []
   size: 2891789
   timestamp: 1725410790053
+- kind: pypi
+  name: opt-einsum
+  version: 3.4.0
+  url: https://files.pythonhosted.org/packages/23/cd/066e86230ae37ed0be70aae89aabf03ca8d9f39c8aea0dec8029455b5540/opt_einsum-3.4.0-py3-none-any.whl
+  sha256: 69bb92469f86a1565195ece4ac0323943e83477171b91d24c35afe028a90d7cd
+  requires_python: '>=3.8'
 - kind: conda
   name: orc
   version: 1.9.0
@@ -3513,22 +3627,21 @@ packages:
   - ptyprocess>=0.5
 - kind: conda
   name: pillow
-  version: 10.4.0
-  build: py310he228d35_1
-  build_number: 1
+  version: 11.0.0
+  build: py310hfeaa1f3_0
   subdir: linux-64
-  url: https://conda.anaconda.org/conda-forge/linux-64/pillow-10.4.0-py310he228d35_1.conda
-  sha256: d531aff3a5a381d99afda011076c9e8a580f922e346e8f1cc0ecf919a42a6c96
-  md5: 267bd9088c6aa5ae96dceb470fa6efa9
+  url: https://conda.anaconda.org/conda-forge/linux-64/pillow-11.0.0-py310hfeaa1f3_0.conda
+  sha256: 74bd9d252f227710844103542a6d7042cf6df490ee93fb6095c46c7254ef4703
+  md5: 1947280342c7259b82a707e38ebc212e
   depends:
   - __glibc >=2.17,<3.0.a0
   - freetype >=2.12.1,<3.0a0
   - lcms2 >=2.16,<3.0a0
   - libgcc >=13
   - libjpeg-turbo >=3.0.0,<4.0a0
-  - libtiff >=4.6.0,<4.8.0a0
+  - libtiff >=4.7.0,<4.8.0a0
   - libwebp-base >=1.4.0,<2.0a0
-  - libxcb >=1.16,<2.0.0a0
+  - libxcb >=1.17.0,<2.0a0
   - libzlib >=1.3.1,<2.0a0
   - openjpeg >=2.5.2,<3.0a0
   - python >=3.10,<3.11.0a0
@@ -3537,8 +3650,8 @@ packages:
   license: HPND
   purls:
   - pkg:pypi/pillow?source=hash-mapping
-  size: 42749655
-  timestamp: 1726075255401
+  size: 42649358
+  timestamp: 1729065834823
 - kind: conda
   name: platformdirs
   version: 4.3.6
@@ -3825,12 +3938,12 @@ packages:
 - kind: conda
   name: python
   version: 3.10.15
-  build: h4a871b0_1_cpython
-  build_number: 1
+  build: h4a871b0_2_cpython
+  build_number: 2
   subdir: linux-64
-  url: https://conda.anaconda.org/conda-forge/linux-64/python-3.10.15-h4a871b0_1_cpython.conda
-  sha256: 7611846de94e1b7c41b308dc6788e65227e8c65bd2f1575e1753acc9a3129fd9
-  md5: 9e1b028075ff7348a194d524b6910f12
+  url: https://conda.anaconda.org/conda-forge/linux-64/python-3.10.15-h4a871b0_2_cpython.conda
+  sha256: c1e5e93b887d8cd1aa31d24b9620cb7eb6645c08c97b15ffc844fd6c29051420
+  md5: 98059097f62e97be9aed7ec904055825
   depends:
   - __glibc >=2.17,<3.0.a0
   - bzip2 >=1.0.8,<2.0a0
@@ -3852,8 +3965,8 @@ packages:
   - python_abi 3.10.* *_cp310
   license: Python-2.0
   purls: []
-  size: 25198492
-  timestamp: 1727719762520
+  size: 25321141
+  timestamp: 1729042931665
 - kind: conda
   name: python-dateutil
   version: 2.9.0
@@ -4191,6 +4304,48 @@ packages:
   purls: []
   size: 371026
   timestamp: 1692055033140
+- kind: pypi
+  name: scipy
+  version: 1.14.1
+  url: https://files.pythonhosted.org/packages/47/78/b0c2c23880dd1e99e938ad49ccfb011ae353758a2dc5ed7ee59baff684c3/scipy-1.14.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+  sha256: 8e32dced201274bf96899e6491d9ba3e9a5f6b336708656466ad0522d8528f69
+  requires_dist:
+  - numpy<2.3,>=1.23.5
+  - pytest ; extra == 'test'
+  - pytest-cov ; extra == 'test'
+  - pytest-timeout ; extra == 'test'
+  - pytest-xdist ; extra == 'test'
+  - asv ; extra == 'test'
+  - mpmath ; extra == 'test'
+  - gmpy2 ; extra == 'test'
+  - threadpoolctl ; extra == 'test'
+  - scikit-umfpack ; extra == 'test'
+  - pooch ; extra == 'test'
+  - hypothesis>=6.30 ; extra == 'test'
+  - array-api-strict>=2.0 ; extra == 'test'
+  - cython ; extra == 'test'
+  - meson ; extra == 'test'
+  - ninja ; sys_platform != 'emscripten' and extra == 'test'
+  - sphinx<=7.3.7,>=5.0.0 ; extra == 'doc'
+  - pydata-sphinx-theme>=0.15.2 ; extra == 'doc'
+  - sphinx-design>=0.4.0 ; extra == 'doc'
+  - matplotlib>=3.5 ; extra == 'doc'
+  - numpydoc ; extra == 'doc'
+  - jupytext ; extra == 'doc'
+  - myst-nb ; extra == 'doc'
+  - pooch ; extra == 'doc'
+  - jupyterlite-sphinx>=0.13.1 ; extra == 'doc'
+  - jupyterlite-pyodide-kernel ; extra == 'doc'
+  - mypy==1.10.0 ; extra == 'dev'
+  - typing-extensions ; extra == 'dev'
+  - types-psutil ; extra == 'dev'
+  - pycodestyle ; extra == 'dev'
+  - ruff>=0.0.292 ; extra == 'dev'
+  - cython-lint>=0.12.2 ; extra == 'dev'
+  - rich-click ; extra == 'dev'
+  - doit>=0.36.0 ; extra == 'dev'
+  - pydevtool ; extra == 'dev'
+  requires_python: '>=3.10'
 - kind: pypi
   name: send2trash
   version: 1.8.3

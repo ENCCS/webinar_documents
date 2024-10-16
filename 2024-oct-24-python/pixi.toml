@@ -40,26 +40,23 @@ cupy = ">=11.6.0,<12"
 pycuda = ">=2024.1,<2025"
 cuda-nvcc = { version = ">=11,<12", channel = "nvidia" }
 
-jax = "0.4.*"
-jaxlib = { version = ">=0.4.23,<0.4.25", build = "cuda*" }
-
-# [system-requirements]
-# linux = "5.10"
-# libc = { family="glibc", version="2.17" }
-# # For jax
-# # https://github.com/prefix-dev/pixi/issues/1288
-# cuda = "11.8"
+## https://github.com/prefix-dev/pixi/issues/1288
+#jax = ">=0.4.23"
+#jaxlib = { version = ">=0.4.23,<0.4.25", build = "*cuda11*" }
 
 [pypi-options]
-extra-index-urls = [
-  "https://pypi.nvidia.com",
-  "https://storage.googleapis.com/jax-releases/jax_releases.html",
-  "https://storage.googleapis.com/jax-releases/jax_cuda_releases.html"
+index-url = "https://pypi.org/simple"
+extra-index-urls = ["https://pypi.nvidia.com"]
+find-links = [
+  {url = "https://storage.googleapis.com/jax-releases/jax_releases.html" },
+  {url = "https://storage.googleapis.com/jax-releases/jax_cuda_releases.html"}
 ]
 
 [pypi-dependencies]
 # polars = { version = ">=1.8.2, <2", extras = ["gpu"] }
 # cudf-polars-cu12 = ">=24"
+jax = { version = "==0.4.24", extras=["cuda11-local"] }
+jaxlib = "*"
 jupyterlab = ">=4.2.5, <5"
 jupyterlab-myst = ">=2.4.2, <3"
 jupyterlab-git = ">=0.50.1, <0.51"
