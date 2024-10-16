@@ -40,8 +40,22 @@ cupy = ">=11.6.0,<12"
 pycuda = ">=2024.1,<2025"
 cuda-nvcc = { version = ">=11,<12", channel = "nvidia" }
 
+jax = "0.4.*"
+jaxlib = { version = ">=0.4.23,<0.4.25", build = "cuda118*" }
+
+[system-requirements]
+linux = "5.10"
+libc = { family="glibc", version="2.17" }
+# For jax
+# https://github.com/prefix-dev/pixi/issues/1288
+cuda = "11.8"
+
 [pypi-options]
-extra-index-urls = ["https://pypi.nvidia.com"]
+extra-index-urls = [
+  "https://pypi.nvidia.com",
+  "https://storage.googleapis.com/jax-releases/jax_releases.html",
+  "https://storage.googleapis.com/jax-releases/jax_cuda_releases.html"
+]
 
 [pypi-dependencies]
 # polars = { version = ">=1.8.2, <2", extras = ["gpu"] }

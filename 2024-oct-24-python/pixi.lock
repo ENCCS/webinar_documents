@@ -8,6 +8,7 @@ environments:
     indexes:
     - https://pypi.org/simple
     - https://pypi.nvidia.com/
+    - https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
     packages:
       linux-64:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/_libgcc_mutex-0.1-conda_forge.tar.bz2
