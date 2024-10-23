@@ -55,6 +55,7 @@ cuda-nvcc = { version = ">=11,<12", channel = "nvidia" }
 #jax = ">=0.4.23"
 #jaxlib = { version = ">=0.4.23,<0.4.25", build = "*cuda11*" }
 cudnn = ">=8.9.7.29,<9"
+dask-cudf = { version = "23.*", channel = "rapidsai" }
 
 [pypi-options]
 index-url = "https://pypi.org/simple"
