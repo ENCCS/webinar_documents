@@ -14,6 +14,7 @@ sync-pip = """\
     requirements.in requirements-jax.in requirements-jupyter.in requirements-nvidia.in
 """
 sync = { depends-on = ["sync-conda", "sync-pip"] }
+lab = "jupyter lab --notebook-dir=.."
 
 [dependencies]
 python = "3.10.*"
