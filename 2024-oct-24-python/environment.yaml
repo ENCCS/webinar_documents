@@ -1,4 +1,4 @@
-name: gpu-python-webinar
+name: default
 channels:
 - conda-forge
 - rapidsai
@@ -20,6 +20,8 @@ dependencies:
 - cupy >=11.6.0,<12
 - pycuda >=2024.1,<2025
 - nvidia::cuda-nvcc >=11,<12
+- cudnn >=8.9.7.29,<9
+- rapidsai::dask-cudf 23.*
 - pip
 - pip:
   - --index-url https://pypi.org/simple
@@ -34,3 +36,5 @@ dependencies:
   - jupyterlab-lsp>=5.1.0, <6
   - python-lsp-server[all]>=1.12.0, <2
   - pytest>=8.3.3, <9
+  - requests>=2.32.3, <3
+  - aiohttp>=3.10.10, <4

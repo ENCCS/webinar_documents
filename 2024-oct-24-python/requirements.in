@@ -9,3 +9,5 @@ cuda-python
 # https://docs.cupy.dev/en/stable/install.html
 cupy-cuda11x
 pycuda
+requests
+aiohttp
