@@ -43,6 +43,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/cuda-version-11.8-h70ddcb2_3.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/cudatoolkit-11.8.0-h4ba93d1_13.conda
       - conda: https://conda.anaconda.org/rapidsai/linux-64/cudf-23.02.00-cuda_11_py310_g5ad4a85b9d_0.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/linux-64/cudnn-8.9.7.29-hbc23b4c_3.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/cupy-11.6.0-py310h9216885_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/cycler-0.12.1-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/dlpack-0.5-h9c3ff4c_0.tar.bz2
@@ -1075,6 +1076,27 @@ packages:
   license_family: APACHE
   size: 13311196
   timestamp: 1675961165366
+- kind: conda
+  name: cudnn
+  version: 8.9.7.29
+  build: hbc23b4c_3
+  build_number: 3
+  subdir: linux-64
+  url: https://conda.anaconda.org/conda-forge/linux-64/cudnn-8.9.7.29-hbc23b4c_3.conda
+  sha256: c553234d447d9938556f067aba7a4686c8e5427e03e740e67199da3782cc420c
+  md5: 4a2d5fab2871d95544de4e1752948d0f
+  depends:
+  - __glibc >=2.17
+  - __glibc >=2.17,<3.0.a0
+  - cuda-version >=11.0,<12.0a0
+  - cudatoolkit 11.*
+  - libgcc-ng >=12
+  - libstdcxx-ng >=12
+  - libzlib >=1.2.13,<2.0.0a0
+  license: LicenseRef-cuDNN-Software-License-Agreement
+  purls: []
+  size: 465458543
+  timestamp: 1710307873021
 - kind: conda
   name: cupy
   version: 11.6.0
