@@ -1,0 +1,11 @@
+numpy>=1.22
+pandas
+matplotlib
+# https://numba.readthedocs.io/en/stable/user/installing.html
+numba>=0.60
+llvmlite>=0.43
+# https://numba.readthedocs.io/en/stable/cuda/overview.html#cuda-bindings
+cuda-python
+# https://docs.cupy.dev/en/stable/install.html
+cupy-cuda11x
+pycuda

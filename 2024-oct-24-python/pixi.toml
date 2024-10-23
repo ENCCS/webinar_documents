@@ -1,0 +1,81 @@
+[project]
+authors = ["Ashwin V. Mohanan <ashwin.mohanan@enccs.se>"]
+channels = ["conda-forge", "rapidsai", "nvidia"]
+description = "Add a short description here"
+name = "2024-oct-24-python"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+sync-conda = "pixi project export conda-environment environment.yaml"
+sync-pip = """\
+  uv pip compile --index-strategy unsafe-best-match --emit-index-url --emit-find-links \
+    -o requirements.txt \
+    requirements.in requirements-jax.in requirements-jupyter.in requirements-nvidia.in
+"""
+sync = { depends-on = ["sync-conda", "sync-pip"] }
+lab = "jupyter lab --notebook-dir=.."
+
+[dependencies]
+python = "3.10.*"
+numpy = ">=1.26.4,<2"
+pandas = ">=1.5.3,<2"
+matplotlib-base = ">=3.9,<4"
+
+numba = ">=0.60.0,<0.61"
+# cuda = {version="11.*", channel="nvidia"}
+
+# # CUDA 12
+# cuda-version = ">=12.0"
+# cuda-nvcc = "*"
+# cuda-nvrtc  "*"
+# # For CUDA Minor Version Compatibility with CUDA 12
+# pynvjitlink = {channel="rapidsai"}
+
+## CUDA 11
+cuda-version = ">=11.2,<12.0"
+cudatoolkit = "*"
+## For CUDA Minor Version Compatibility with CUDA 11
+cubinlinker = {channel="rapidsai"}
+ptxcompiler = "*"
+
+## RAPIDS
+cudf = { version = "23.*", channel = "rapidsai" }
+rmm = { version = "23.*", channel = "rapidsai" }
+librmm = { version = "23.*", channel = "rapidsai" }
+
+cupy = ">=11.6.0,<12"
+
+## pycuda
+pycuda = ">=2024.1,<2025"
+cuda-nvcc = { version = ">=11,<12", channel = "nvidia" }
+
+## jax
+## https://github.com/prefix-dev/pixi/issues/1288
+#jax = ">=0.4.23"
+#jaxlib = { version = ">=0.4.23,<0.4.25", build = "*cuda11*" }
+cudnn = ">=8.9.7.29,<9"
+dask-cudf = { version = "23.*", channel = "rapidsai" }
+
+[pypi-options]
+index-url = "https://pypi.org/simple"
+extra-index-urls = ["https://pypi.nvidia.com"]
+find-links = [
+  {url = "https://storage.googleapis.com/jax-releases/jax_releases.html" },
+  {url = "https://storage.googleapis.com/jax-releases/jax_cuda_releases.html"}
+]
+
+[pypi-dependencies]
+# polars = { version = ">=1.8.2, <2", extras = ["gpu"] }
+# cudf-polars-cu12 = ">=24"
+jax = { version = "==0.4.24", extras=["cuda11-local"] }
+jaxlib = "*"
+jupyterlab = ">=4.2.5, <5"
+jupyterlab-myst = ">=2.4.2, <3"
+jupyterlab-git = ">=0.50.1, <0.51"
+jupyterlab-lsp = ">=5.1.0, <6"
+python-lsp-server = { version = ">=1.12.0, <2", extras = ["all"] }
+pytest = ">=8.3.3, <9"
+requests = ">=2.32.3, <3"
+aiohttp = ">=3.10.10, <4"
+

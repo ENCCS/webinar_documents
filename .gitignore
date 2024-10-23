@@ -1,0 +1,9 @@
+
+# pixi environments
+.pixi
+*.egg-info
+.ipynb_checkpoints
+.virtual_documents
+__pycache__
+2024-oct-24-python/titanic.csv
+*.parquet
