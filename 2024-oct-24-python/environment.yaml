@@ -1,4 +1,4 @@
-name: default
+name: gpu-python-webinar
 channels:
 - conda-forge
 - rapidsai
