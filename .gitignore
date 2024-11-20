@@ -7,3 +7,4 @@
 __pycache__
 2024-oct-24-python/titanic.csv
 *.parquet
+.vscode/
